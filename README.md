@@ -11,3 +11,5 @@
 9. Sukurti atskirą Post kūrimo formą, kurioje galima kartu sukurti ir tam Postui naują kategoriją.
 10. Sukurti atskirą Category kūrimo formą, kurioja galima sukurti naujų Post. Post turi būti galimybė pasirinkti n+1.
 11. Atsidarius Category per show, turi būti rodomi visi kategorijai priklausantys Post lentelėje.
+
+<!-- end in 1:08 20220211 -->
