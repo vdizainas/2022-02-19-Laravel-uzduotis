@@ -19,9 +19,12 @@ class PostController extends Controller
     public function index()
     {
 
+        // $categories = Category::all();
+        $categories = Category::orderBy('name', 'asc')->get();
         $posts = Post::all();
 
-        return view('post.index', ['posts' => $posts]);
+        return view('post.index', ['posts' => $posts, 'categories' => $categories]);
+
     }
 
     /**
@@ -91,11 +94,13 @@ class PostController extends Controller
     }
 
     // filter
-    public function postfilter(Request $request) {
+    public function catfilter(Request $request) {
 
         $category_id = $request->category_id;
+        // $category_id = 2;
         $posts = Post::where('category_id', '=', $category_id)->get();
-        return view('post.postfilter', ['posts' => $posts]);
+        // $posts = Post::all();
+        return view('post.catfilter', ['posts' => $posts]);
 
     }
 

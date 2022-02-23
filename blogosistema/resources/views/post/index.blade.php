@@ -3,9 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row">
-      <div class="col-md-3 sidebar">
+      <div  class="col-md-3 bg-white sidebar p-3">
         sidebar
         <a class="btn btn-primary w-100" href="{{route('post.create')}}">Create new post</a>
+        <form method="GET" action="{{route('post.catfilter')}}">
+          @csrf
+          <select  class="form-select my-3" name="category_id">
+            @foreach ($categories as $category)
+              <option value="{{$category->id}}">{{$category->name}}</option>                
+            @endforeach
+          </select>
+          <button class="btn btn-secondary w-100" type="submit">Filter</button>
+        </form>
       </div>
       <div class="col-md-9">
 

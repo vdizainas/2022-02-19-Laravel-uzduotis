@@ -30,6 +30,7 @@ Route::prefix('post')->group(function() {
     Route::post('destroy/{post}', 'App\Http\Controllers\PostController@destroy')->name('post.destroy');
     Route::get('show/{post}', 'App\Http\Controllers\PostController@show')->name('post.show');
     Route::get('indexpagination', 'App\Http\Controllers\PostController@indexpagination')->name('post.indexpagination');
+    Route::get('catfilter', 'App\Http\Controllers\PostController@catfilter')->name('post.catfilter');
 });
 
 Route::prefix('category')->group(function() {

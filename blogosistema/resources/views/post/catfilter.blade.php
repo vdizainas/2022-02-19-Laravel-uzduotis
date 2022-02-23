@@ -10,7 +10,7 @@
          {{-- sort --}}
         <div class="col">
           <h5>Sort</h5>
-          <form method="GET" action="{{route('post.indexpagination')}}">
+          {{-- <form method="GET" action="{{route('post.indexpagination')}}">
             @csrf
             <select class="form-select mb-3" name="sortCollumn">
               @foreach ($select_array as $key=>$item)
@@ -33,22 +33,13 @@
               @endif
             </select>
             <button class="btn btn-secondary w-100" type="submit">Sort</button>
-          </form>
+          </form> --}}
         </div>
         {{-- END --}}
       </div>
       <div class="col-md-9">
 
-        <div class="row justify-content-end">              
 
-           {{-- pagintation --}}          
-           <div class="col-auto">
-            {{-- {{$posts->links()}} --}}
-            {!! $posts->appends(Request::except('page'))->render() !!}             
-          </div>
-          {{-- END --}}   
-
-        </div>
 
         @if (count($posts) == 0)
           <p>Įrašų nėra</p>
@@ -92,13 +83,6 @@
         </div>
         {{-- END posts row --}}
 
-        {{-- pagintation --}}
-        <div class="row">
-          <div class="col-auto mt-3 mx-auto">
-            {{$posts->links()}}             
-          </div>
-        </div>
-        {{-- END --}}
 
       </div>
     </div>
